@@ -6,28 +6,29 @@
 /*   By: alermolo <alermolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:26:47 by alermolo          #+#    #+#             */
-/*   Updated: 2023/11/14 18:34:34 by alermolo         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:43:56 by alermolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_printaddr(unsigned long addr)
+int	ft_printaddr(unsigned long long addr)
 {
-	char	buffer[17];
+	char	buffer[19];
 	char	*base;
 	int		i;
 	int		printed;
 
 	i = 0;
 	base = "0123456789abcdef";
+	if (!addr)
+		return (ft_printstr("(nil)"));
 	while (addr > 0)
 	{
-		buffer[i] = base[(unsigned char)addr % 16];
+		buffer[i++] = base[(unsigned char)addr % 16];
 		addr /= 16;
-		i++;
 	}
-	if (i < 16 && i + 1 < 16)
+	if (i < 18 && i + 1 < 18)
 	{
 		buffer[i] = 'x';
 		buffer[i + 1] = '0';

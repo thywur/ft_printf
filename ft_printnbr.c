@@ -6,11 +6,11 @@
 /*   By: alermolo <alermolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:42:42 by alermolo          #+#    #+#             */
-/*   Updated: 2023/11/14 18:35:17 by alermolo         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:47:51 by alermolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printnbr(int n)
 {
@@ -26,11 +26,11 @@ int	ft_printnbr(int n)
 	}
 	if (nb >= 10)
 	{
-		ft_printnbr(nb / 10);
-		ft_printnbr(nb % 10);
+		printed += ft_printnbr(nb / 10);
+		printed += ft_printnbr(nb % 10);
 	}
 	if (nb >= 0 && nb < 10)
-		printed += ft_printchar(nb + '0');
+		return (printed += ft_printchar(nb + '0'));
 	return (printed);
 }
 
@@ -41,10 +41,10 @@ int	ft_printnbr_unsigned(unsigned int n)
 	printed = 0;
 	if (n >= 10)
 	{
-		ft_printnbr(n / 10);
-		ft_printnbr(n % 10);
+		printed += ft_printnbr(n / 10);
+		printed += ft_printnbr(n % 10);
 	}
 	if (n >= 0 && n < 10)
-		printed += ft_printchar(n + '0');
+		return (ft_printchar(n + '0'));
 	return (printed);
 }

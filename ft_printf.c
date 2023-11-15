@@ -6,11 +6,11 @@
 /*   By: alermolo <alermolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:14:56 by alermolo          #+#    #+#             */
-/*   Updated: 2023/11/14 18:50:36 by alermolo         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:50:05 by alermolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	print_format(char c, va_list args)
 {
@@ -22,7 +22,7 @@ static int	print_format(char c, va_list args)
 	else if (c == 's')
 		printed += ft_printstr(va_arg(args, char *));
 	else if (c == 'p')
-		printed += ft_printaddr(va_arg(args, unsigned long));
+		printed += ft_printaddr(va_arg(args, unsigned long long));
 	else if (c == 'd' || c == 'i')
 		printed += ft_printnbr(va_arg(args, int));
 	else if (c == 'u')
@@ -59,23 +59,3 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (printed);
 }
-
-// #include <stdio.h>
-// int	main()
-// {
-// 	printf("%c\n", 'c');
-// 	ft_printf("%c\n", 'c');
-// 	printf("%s\n", "test");
-// 	ft_printf("%s\n", "test");
-// 	printf("%p\n", "test");
-// 	ft_printf("%p\n", "test");
-// 	printf("%d %i\n", 42, 42);
-// 	ft_printf("%d %i\n", 42, 42);
-// 	printf("%u\n", 42);
-// 	ft_printf("%u\n", 42);
-// 	printf("%x %X\n", 42, 42);
-// 	ft_printf("%x %X\n", 42, 42);
-// 	printf("%%\n");
-// 	ft_printf("%%\n");
-// 	return (0);
-// }

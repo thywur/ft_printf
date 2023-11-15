@@ -6,11 +6,11 @@
 /*   By: alermolo <alermolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:16:34 by alermolo          #+#    #+#             */
-/*   Updated: 2023/11/14 16:15:47 by alermolo         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:53:05 by alermolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printchar(char c)
 {
