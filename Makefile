@@ -6,7 +6,7 @@
 #    By: alermolo <alermolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:11:24 by alermolo          #+#    #+#              #
-#    Updated: 2023/11/14 18:46:05 by alermolo         ###   ########.fr        #
+#    Updated: 2023/11/16 10:59:08 by alermolo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = 		ft_printf.c \
 
 OBJS =		$(SRCS:.c=.o)
 
-HEADER =	libftprintf.h
+HEADER =	ft_printf.h
 
 CC =		cc
 
@@ -36,9 +36,6 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 				ar rcs $(NAME) $(OBJS)
-
-test:		${OBJS}
-				$(CC) $(CFLAGS) $(OBJS) -o test
 
 clean:
 				$(RM) $(OBJS) $(BOBJS)
