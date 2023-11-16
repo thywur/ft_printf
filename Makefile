@@ -6,7 +6,7 @@
 #    By: alermolo <alermolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:11:24 by alermolo          #+#    #+#              #
-#    Updated: 2023/11/16 10:59:08 by alermolo         ###   ########.fr        #
+#    Updated: 2023/11/16 11:01:22 by alermolo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,11 @@ $(NAME):	$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) $(BOBJS)
+				$(RM) $(OBJS)
 
 fclean:		clean
 				$(RM) $(NAME)
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re
